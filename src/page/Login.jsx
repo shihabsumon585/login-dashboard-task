@@ -18,6 +18,7 @@ const Login = () => {
       .then(response => {
         console.log('Login successful:', "token", response.data.token);
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("email", email);
         toast('Login successful! Redirecting...');
         setTimeout(() => {
           navigate('/dashboard');

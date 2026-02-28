@@ -17,6 +17,7 @@ const DashboardSidebar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("email");
     toast.success("Logged out successfully!");
 
     setTimeout(() => {
