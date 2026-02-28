@@ -1,31 +1,48 @@
+// ProjectAnalytics.jsx
+import React, { useEffect, useState } from "react";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+
 const ProjectAnalytics = () => {
-  const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-  const data = [45, 75, 55, 95, 80, 60, 40];
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://task-api-eight-flax.vercel.app/api/analytics");
+        const result = await response.json();
+        setData(result);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching analytics data:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="bg-white rounded-xl shadow p-4 w-full max-w-sm text-center">
+        Loading analytics...
+      </div>
+    );
+  }
 
   return (
-    <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
-      <h4 className="text-sm font-bold mb-6">Project Analytics</h4>
-      <div className="flex justify-between items-end h-32 gap-2">
-        {data.map((h, i) => (
-          <div key={i} className="flex flex-col items-center flex-1">
-            <div 
-              className={`w-full rounded-full transition-all duration-500 ${
-                i === 0 || i === 6 ? 'border-2 border-dashed border-gray-200' : 
-                i === 3 ? 'bg-emerald-900' : 'bg-emerald-600'
-              }`}
-              style={{ height: `${h}%` }}
-            >
-              {i === 2 && (
-                <div className="relative">
-                  <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-100 text-[8px] px-1 py-0.5 rounded border border-gray-200">74%</span>
-                </div>
-              )}
-            </div>
-            <span className="text-[10px] text-gray-400 mt-2 font-medium">{days[i]}</span>
-          </div>
-        ))}
-      </div>
+    <div className="bg-white rounded-xl shadow p-4 w-full max-w-sm">
+      <h2 className="text-gray-700 font-semibold mb-4">Project Analytics</h2>
+      <ResponsiveContainer width="100%" height={150}>
+        <BarChart data={data} margin={{ top: 5, right: 5, left: 0, bottom: 5 }}>
+          <XAxis dataKey="date" axisLine={false} tickLine={false} />
+          <YAxis hide />
+          <Tooltip />
+          <Bar dataKey="views" fill="#16a34a" radius={[4, 4, 0, 0]} barSize={20} />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 };
+
 export default ProjectAnalytics;

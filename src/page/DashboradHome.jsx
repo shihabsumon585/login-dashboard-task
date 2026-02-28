@@ -6,6 +6,7 @@ import TeamCollaboration from '../components/TeamCollaboration';
 import ProjectProgress from '../components/ProjectProgress';
 // import ProjectList from '../components/ProjectList';
 import Reminders from '../components/Reminders';
+import ProductsList from '../components/ProductsList';
 // import TimeTracker from '../components/TimeTracker';
 // import Sidebar from '../components/Sidebar';
 
@@ -26,17 +27,18 @@ const DashboardHome = () => {
 
         {/* Middle Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
-          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* <div className=" grid grid-cols-1 lg:col-span-2 md:grid-cols-3 gap-6"> */}
             <ProjectAnalytics />
             <Reminders />
+            <ProductsList />
             <TeamCollaboration />
             <ProjectProgress />
-          </div>
+          {/* </div> */}
           
-          <div className="space-y-6">
+          {/* <div className="space-y-6"> */}
             {/* <ProjectList /> */}
             {/* <TimeTracker /> */}
-          </div>
+          {/* </div> */}
         </div>
       </main>
     </div>
