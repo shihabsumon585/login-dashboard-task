@@ -29,7 +29,7 @@ const DashboardSidebar = () => {
       {/* Logo */}
       <div className="flex items-center gap-1 mb-10 px-2">
         <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-          <div className="w-5 h-5 border-2 border-green-600 rounded-full border-t-transparent animate-spin" />
+          <div className="w-5 h-5 border-2 border-green-600 rounded-full border-t-transparent"></div>
         </div>
         <h1 className="text-xl font-bold text-gray-800">Donezo</h1>
       </div>
@@ -37,15 +37,15 @@ const DashboardSidebar = () => {
       {/* Menu */}
       <Section title="Menu">
         <SidebarLink to="/dashboard" icon={<LayoutDashboard size={20} />} label="Dashboard" />
-        <SidebarLink to="/dashboard/tasks" icon={<ClipboardList size={20} />} label="Tasks" badge="12+" />
+        <SidebarLink to="/dashboard/products" icon={<ClipboardList size={20} />} label="Products" />
         <SidebarLink to="/dashboard/calendar" icon={<Calendar size={20} />} label="Calendar" />
         <SidebarLink to="/dashboard/analytics" icon={<BarChart3 size={20} />} label="Analytics" />
-        <SidebarLink to="/dashboard/team" icon={<Users size={20} />} label="Team" />
+        <SidebarLink to="/dashboard/users" icon={<Users size={20} />} label="Users" />
       </Section>
 
       {/* General */}
       <Section title="General">
-        <SidebarLink to="/dashboard/settings" icon={<Settings size={20} />} label="Settings" />
+        {/* <SidebarLink to="/dashboard/settings" icon={<Settings size={20} />} label="Settings" /> */}
         <SidebarLink to="/dashboard/help" icon={<HelpCircle size={20} />} label="Help" />
         <SidebarLink icon={<LogOut size={20} />} label="Logout" onClick={handleLogout} />
       </Section>

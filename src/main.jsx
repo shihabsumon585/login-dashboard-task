@@ -8,6 +8,11 @@ import Login from './page/Login.jsx';
 import DashboardLayout from './layout/DashboardLayout.jsx';
 import DashboradHome from './page/DashboradHome.jsx';
 import PrivateRoutes from './routes/PrivateRoutes.jsx';
+import Help from './page/Help.jsx';
+import Calender from './page/Calender.jsx';
+import Products from './page/Products.jsx';
+import Analytics from './page/Analytics.jsx';
+import Users from './page/Users.jsx';
 // import PrivateRoutes from './routes/PrivateRoutes.jsx';
 
 
@@ -29,12 +34,32 @@ const router = createBrowserRouter([
         element: <DashboradHome></DashboradHome>,
       },
       {
-        path: "settings",
-        element: <div>Dashboard Settings</div>,
-      },
-      {
         path: "profile",
         element: <div>Dashboard Profile</div>,
+      },
+      {
+        path: "products",
+        element: <Products></Products>
+      },
+      {
+        path: "all-users",
+        element: <div>Dashboard All Users</div>,
+      },
+      {
+        path: "help",
+        element: <Help></Help>,
+      },
+      {
+        path: "calendar",
+        element: <Calender></Calender>
+      },
+      {
+        path: "analytics",
+        element: <Analytics></Analytics>
+      },
+      {
+        path: "users",
+        element: <Users></Users>
       }
     ]
   }

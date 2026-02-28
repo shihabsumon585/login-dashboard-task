@@ -2,13 +2,11 @@ import React from 'react';
 import Header from '../components/Header';
 import TopCard from '../components/TopCard';
 import ProjectAnalytics from '../components/ProjectAnalytics';
-import TeamCollaboration from '../components/TeamCollaboration';
 import ProjectProgress from '../components/ProjectProgress';
-// import ProjectList from '../components/ProjectList';
 import Reminders from '../components/Reminders';
 import ProductsList from '../components/ProductsList';
-// import TimeTracker from '../components/TimeTracker';
-// import Sidebar from '../components/Sidebar';
+import UserList from '../components/UserList';
+import TimeTracker from '../components/TimeTracker';
 
 const DashboardHome = () => {
   return (
@@ -31,13 +29,15 @@ const DashboardHome = () => {
             <ProjectAnalytics />
             <Reminders />
             <ProductsList />
-            <TeamCollaboration />
+            <UserList />
             <ProjectProgress />
+            <TimeTracker />
+          
           {/* </div> */}
           
+            {/* <TeamCollaboration /> */}
           {/* <div className="space-y-6"> */}
             {/* <ProjectList /> */}
-            {/* <TimeTracker /> */}
           {/* </div> */}
         </div>
       </main>

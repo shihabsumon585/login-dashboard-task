@@ -1,6 +1,6 @@
 const ProjectProgress = () => (
   <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
-    <h4 className="text-sm font-bold mb-2">Project Progress</h4>
+    <h4 className="text-sm font-bold mb-2 text-gray-700">Project Progress</h4>
     <div className="relative flex justify-center items-center mt-4">
       {/* Custom SVG Half Donut */}
       <svg className="w-32 h-32 transform -rotate-90">
