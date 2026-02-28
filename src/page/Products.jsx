@@ -14,7 +14,6 @@ const Products = () => {
                 setProducts(data);
                 setLoading(false);
             } catch (error) {
-                console.error("Error fetching products:", error);
                 setLoading(false);
             }
         };

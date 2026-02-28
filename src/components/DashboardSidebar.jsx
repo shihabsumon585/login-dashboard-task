@@ -27,7 +27,6 @@ const DashboardSidebar = () => {
 
   return (
     <div className="flex flex-col min-h-screen w-64 bg-white border-r border-gray-100 p-6 fixed">
-      {/* Logo */}
       <div className="flex items-center gap-1 mb-10 px-2">
         <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
           <div className="w-5 h-5 border-2 border-green-600 rounded-full border-t-transparent"></div>
@@ -35,7 +34,6 @@ const DashboardSidebar = () => {
         <h1 className="text-xl font-bold text-gray-800">Donezo</h1>
       </div>
 
-      {/* Menu */}
       <Section title="Menu">
         <SidebarLink to="/dashboard" icon={<LayoutDashboard size={20} />} label="Dashboard" />
         <SidebarLink to="/dashboard/products" icon={<ClipboardList size={20} />} label="Products" />
@@ -44,14 +42,11 @@ const DashboardSidebar = () => {
         <SidebarLink to="/dashboard/users" icon={<Users size={20} />} label="Users" />
       </Section>
 
-      {/* General */}
       <Section title="General">
-        {/* <SidebarLink to="/dashboard/settings" icon={<Settings size={20} />} label="Settings" /> */}
         <SidebarLink to="/dashboard/help" icon={<HelpCircle size={20} />} label="Help" />
         <SidebarLink icon={<LogOut size={20} />} label="Logout" onClick={handleLogout} />
       </Section>
 
-      {/* Promo */}
       <div className="mt-auto bg-emerald-950 p-4 rounded-2xl text-white">
         <p className="text-sm font-semibold">Download our Mobile App</p>
 
@@ -68,29 +63,29 @@ const DashboardSidebar = () => {
   );
 };
 
-      export default DashboardSidebar;
+export default DashboardSidebar;
 
 
-      const Section = ({title, children}) => (
-      <>
-        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-2">
-          {title}
-        </p>
-        <nav className="space-y-1 mb-6">{children}</nav>
-      </>
-      );
+const Section = ({ title, children }) => (
+  <>
+    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-2">
+      {title}
+    </p>
+    <nav className="space-y-1 mb-6">{children}</nav>
+  </>
+);
 
 
-      const SidebarLink = ({icon, label, badge, to, onClick}) => {
+const SidebarLink = ({ icon, label, badge, to, onClick }) => {
   const content = (
-      <div className="flex items-center gap-3">
-        <span className="text-gray-400">{icon}</span>
-        <span className="text-sm font-medium">{label}</span>
-      </div>
-      );
+    <div className="flex items-center gap-3">
+      <span className="text-gray-400">{icon}</span>
+      <span className="text-sm font-medium">{label}</span>
+    </div>
+  );
 
-      // Logout button
-      if (onClick) {
+
+  if (onClick) {
     return (
       <button
         onClick={onClick}
@@ -98,26 +93,26 @@ const DashboardSidebar = () => {
       >
         {content}
       </button>
-      );
+    );
   }
 
-      // Normal NavLink
-      return (
-      <NavLink
-        to={to}
-        className={({ isActive }) =>
-          `flex items-center justify-between px-3 py-2 rounded-xl transition ${isActive
-            ? "bg-green-50 text-green-700"
-            : "text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-          }`
-        }
-      >
-        {content}
-        {badge && (
-          <span className="bg-green-900 text-white text-[10px] px-1.5 py-0.5 rounded-md font-bold">
-            {badge}
-          </span>
-        )}
-      </NavLink>
-      );
+
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        `flex items-center justify-between px-3 py-2 rounded-xl transition ${isActive
+          ? "bg-green-50 text-green-700"
+          : "text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+        }`
+      }
+    >
+      {content}
+      {badge && (
+        <span className="bg-green-900 text-white text-[10px] px-1.5 py-0.5 rounded-md font-bold">
+          {badge}
+        </span>
+      )}
+    </NavLink>
+  );
 };

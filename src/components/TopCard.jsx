@@ -11,9 +11,7 @@ const TopCard = () => {
         "https://task-api-eight-flax.vercel.app/api/dashboard"
       );
       const data = await res.json();
-      console.log(data.overview)
 
-      // API data → Card format
       const mappedCards = [
         {
           id: 1,
@@ -58,7 +56,6 @@ const TopCard = () => {
                 : "bg-white text-gray-800 border hover:shadow-md"
             }`}
           >
-            {/* Header */}
             <div className="flex items-center justify-between mb-4">
               <p className="text-xl font-medium opacity-90">{card.title}</p>
 
@@ -73,10 +70,8 @@ const TopCard = () => {
               </div>
             </div>
 
-            {/* Value */}
             <h2 className="text-3xl font-bold mb-2">{card.value}</h2>
 
-            {/* Footer */}
             <p
               className={`text-xs ${
                 isActive ? "text-green-100" : "text-gray-500"

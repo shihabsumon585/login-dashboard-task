@@ -4,7 +4,6 @@ import { use, useEffect } from 'react';
 
 const Header = () => {
   const email = localStorage.getItem("email");
-  console.log(email)
   return (
     <div className="flex justify-between items-center">
       <div className="relative w-96">

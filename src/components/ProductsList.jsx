@@ -1,4 +1,3 @@
-// ProductsList.jsx
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +14,6 @@ const ProductsList = () => {
         setProducts(data);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching products:", error);
         setLoading(false);
       }
     };

@@ -27,7 +27,6 @@ const Analytics = () => {
                 setData(result);
                 setLoading(false);
             } catch (error) {
-                console.error("Error fetching analytics:", error);
                 setLoading(false);
             }
         };
@@ -54,11 +53,8 @@ const Analytics = () => {
                     <YAxis />
                     <Tooltip />
                     <Legend verticalAlign="top" height={36} />
-                    {/* Views as Bar */}
                     <Bar dataKey="views" barSize={20} fill="#16a34a" radius={[4, 4, 0, 0]} />
-                    {/* Clicks as Line */}
                     <Line type="monotone" dataKey="clicks" stroke="#3b82f6" strokeWidth={2} />
-                    {/* Conversions as Line */}
                     <Line type="monotone" dataKey="conversions" stroke="#f59e0b" strokeWidth={2} />
                 </ComposedChart>
             </ResponsiveContainer>

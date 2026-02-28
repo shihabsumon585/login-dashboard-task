@@ -16,7 +16,6 @@ const Login = () => {
 
     axios.post('https://task-api-eight-flax.vercel.app/api/login', { email, password })
       .then(response => {
-        console.log('Login successful:', "token", response.data.token);
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("email", email);
         toast('Login successful! Redirecting...');
@@ -27,7 +26,6 @@ const Login = () => {
       .catch(error => {
         toast('Login failed. Please try again.')
       });
-    console.log(email, password)
   }
 
   const token = localStorage.getItem("token");
@@ -40,10 +38,8 @@ const Login = () => {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-[#F8FAFC] font-sans">
       <ToastContainer />
-      {/* Login Card */}
       <div className="w-full max-w-md bg-white p-10 rounded-[32px] shadow-sm border border-gray-100">
 
-        {/* Logo & Header */}
         <div className="text-center mb-10">
           <div className="flex justify-center items-center gap-2 mb-4">
             <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center">
@@ -55,9 +51,7 @@ const Login = () => {
           <p className="text-gray-500 text-sm mt-2">Please enter your details to sign in.</p>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleLogin} className="space-y-6">
-          {/* Email Input */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-gray-700 ml-1">Email Address</label>
             <div className="relative group">
@@ -73,11 +67,9 @@ const Login = () => {
             </div>
           </div>
 
-          {/* Password Input */}
           <div className="space-y-2">
             <div className="flex justify-between items-center ml-1">
               <label className="text-sm font-medium text-gray-700">Password</label>
-              {/* <a href="#" className="text-xs font-semibold text-[#166534] hover:underline">Forgot?</a> */}
             </div>
             <div className="relative group">
               <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-[#166534] transition-colors">
@@ -99,31 +91,12 @@ const Login = () => {
             </div>
           </div>
 
-          {/* Remember Me */}
-          {/* <div className="flex items-center gap-2 ml-1">
-            <input 
-              type="checkbox" 
-              id="remember" 
-              className="w-4 h-4 rounded border-gray-300 text-[#166534] focus:ring-[#166534]" 
-            />
-            <label htmlFor="remember" className="text-sm text-gray-600 cursor-pointer">Remember for 30 days</label>
-          </div> */}
-
-          {/* Sign In Button */}
           <button className="w-full bg-[#166534] hover:bg-[#14532d] text-white font-semibold py-4 rounded-2xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-green-900/10 active:scale-[0.98]">
             Sign In
             <ArrowRight size={18} />
           </button>
         </form>
-
-        {/* Footer */}
-        {/* <p className="text-center mt-8 text-sm text-gray-500">
-          Don't have an account? 
-          <a href="#" className="ml-1 font-bold text-[#166534] hover:underline">Create Account</a>
-        </p> */}
       </div>
-
-      {/* Subtle Background Elements */}
       <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden opacity-40 pointer-events-none">
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-green-100 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-gray-200 rounded-full blur-3xl"></div>

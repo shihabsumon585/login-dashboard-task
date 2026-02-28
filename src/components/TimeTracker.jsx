@@ -42,7 +42,6 @@ const TimeTracker = () => {
       </div>
 
       <div className="flex justify-center gap-5 mb-7 z-10">
-        {/* Play/Pause Button */}
         <button 
           onClick={() => setIsActive(!isActive)}
           className="bg-white p-3 rounded-full hover:bg-gray-200 transition-colors"
@@ -54,7 +53,6 @@ const TimeTracker = () => {
           )}
         </button>
 
-        {/* Stop Button */}
         <button 
           onClick={() => {setIsActive(false); setSeconds(0);}}
           className="bg-[#ef4444] p-3 rounded-full hover:bg-red-600 transition-colors"

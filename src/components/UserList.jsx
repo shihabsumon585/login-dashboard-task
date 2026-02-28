@@ -1,4 +1,3 @@
-// UserList.jsx
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +14,6 @@ const UserList = () => {
                 setUsers(data.slice(0, 4));
                 setLoading(false);
             } catch (error) {
-                console.error("Error fetching users:", error);
                 setLoading(false);
             }
         };

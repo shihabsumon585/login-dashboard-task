@@ -1,4 +1,3 @@
-// ProjectAnalytics.jsx
 import React, { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
@@ -14,7 +13,6 @@ const ProjectAnalytics = () => {
         setData(result);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching analytics data:", error);
         setLoading(false);
       }
     };

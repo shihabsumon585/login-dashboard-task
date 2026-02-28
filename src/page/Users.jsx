@@ -17,7 +17,6 @@ const Users = () => {
                 setFilteredUsers(data);
                 setLoading(false);
             } catch (error) {
-                console.error("Error fetching users:", error);
                 setLoading(false);
             }
         };
@@ -25,7 +24,6 @@ const Users = () => {
         fetchUsers();
     }, []);
 
-    // Search filter
     useEffect(() => {
         const filtered = users.filter(
             (user) =>
@@ -47,7 +45,6 @@ const Users = () => {
         <div className="bg-white p-6 rounded-xl shadow w-full px-30 mt-4">
             <h2 className="text-gray-700 font-semibold mb-4">Users</h2>
 
-            {/* Search Input */}
             <div className="mb-4">
                 <input
                     type="text"
