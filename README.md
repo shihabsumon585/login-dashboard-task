@@ -6,12 +6,16 @@ A modern single-page React dashboard application built as part of a Frontend Int
 
 🚀 Live Demo
 
-
+<br>
+<br>
+<br>
 
 📂 GitHub Repository
+https://github.com/shihabsumon585/login-dashboard-task
 
-
-
+<br>
+<br>
+<br>
 
 📌 Project Overview
 
